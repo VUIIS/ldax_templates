@@ -25,7 +25,7 @@ echo "Checking that we can download"
 SLEEPSECS=$[ ( $RANDOM % $SLEEPSHORT ) ]s && echo "$SLEEPSECS" && sleep $SLEEPSECS
 while true;do
     SESSID=`curl -s -n "$XNATHOST/data/JSESSION"`
-    echo "JSESSIONID=$SESSID"
+    #echo "JSESSIONID=$SESSID"
     SESSCOUNT=`curl -s -b "JSESSIONID=$SESSID" "$XNATHOST/data/user/$XNATUSER/sessions" | cut -s -f2 -d ":" | cut -f1 -d "}"`
     echo "$SESSCOUNT"
     echo "$SESSLIMIT"
@@ -39,7 +39,7 @@ while true;do
         break
     fi
 done
-echo "DONE! JSESSIONID=$SESSID"
+#echo "DONE! JSESSIONID=$SESSID"
 
 
 # Run mega docker
