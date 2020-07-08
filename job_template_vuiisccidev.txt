@@ -6,6 +6,7 @@
 #SBATCH --time=${job_walltime}
 #SBATCH --mem=${job_memory}mb
 #SBATCH -o ${job_output_file}
+#SBATCH --account=p_masi_vuiis
 
 smemwatch -k 90 -d 50 $$$$ &
 # List info
