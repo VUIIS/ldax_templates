@@ -43,8 +43,7 @@ done
 
 
 # Run mega docker
-singularity exec --cleanenv --contain --bind /home/$USER/.dax_settings.ini:/home/$USER/.dax_settings.ini --bind /home/$USER/.daxnetrc:/home/$USER/.daxnetrc --bind /scratch/$USER:/scratch/$USER --bind /tmp:/tmp --bind /data/mcr/centos7/dax_local/ldax_credentials:/data/mcr/centos7/dax_local/ldax_credentials /data/mcr/singularity/mega_docker/vuiiscci_mega_docker_4.2.0-2020-07-13.img scl enable python27 'bash -c "
-cp /data/mcr/ldax_setup/bashrc_ldax ${HOME}/.bashrc && \
+singularity exec --cleanenv --contain --bind /home/$USER/.dax_settings.ini:/home/$USER/.dax_settings.ini --bind /home/$USER/.daxnetrc:/home/$USER/.daxnetrc --bind /scratch/$USER:/scratch/$USER --bind /tmp:/tmp --bind /data/mcr/centos7/dax_local/ldax_credentials:/data/mcr/centos7/dax_local/ldax_credentials --bind /data/mcr/centos7/dax_local/bashrc_ldax_megadocker:${HOME}/.bashrc /data/mcr/singularity/mega_docker/vuiiscci_mega_docker_4.2.0-2020-07-13.img scl enable python27 'bash -c "
 source ${HOME}/.bashrc && \
 export PYTHONNOUSERSITE=TRUE && \
 export OPENBLAS_NUM_THREADS=1 && \
